@@ -257,7 +257,7 @@ function cargarPreguntas() {
                     <strong>${pregunta.pregunta}</strong> <br>
                     <img src="${pregunta.imatge}" alt="Imagen" style="width:100px;"><br>
                     <button onclick="eliminarPregunta(${pregunta.id})">Eliminar</button>
-                    <button onclick="mostrarFormularioActualizar(${pregunta.id}, '${pregunta.pregunta}', '${pregunta.imatge}')">Editar</button>
+                    <button onclick="mostrarFormularioActualizar(${pregunta.id}, '${pregunta.pregunta}', '${pregunta.imatge}')">Editar pregunta</button>
                 </div>`;
             });
         })
