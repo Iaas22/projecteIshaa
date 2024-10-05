@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test d'Autoescola</title>
+    <link rel="stylesheet" href="../web/css/styles.css">
+</head>
+<body>
+    <h1>Test d'Autoescola</h1>
+    <h2>Respón preguntas en 30 segundos. ¡Bona sort!</h2>
+    
+    <!-- Pantalla de inicio -->
+    <div id="pantallaInicio">
+        <input type="text" id="nombre" placeholder="Introduce tu nombre" />
+        <input type="number" id="cantidadPreguntas" placeholder="Cantidad de preguntas" min="1" max="10" />
+        <button id="iniciarJuego" class="button-navegacion">Iniciar Juego</button>
+    </div>
+
+    <!-- Contenedor para mostrar el estado de la partida -->
+    <div id="estatPartida"></div>
+
+    <!-- Contenedor para las preguntas -->
+    <div id="contenedor"></div>
+
+    <!-- Contenedor para mostrar el temporizador -->
+    <div id="temporizadorContainer">
+        <h2>Temps restant: <span id="temporizador">30</span> segons</h2>
+    </div>
+
+    <br>
+
+    <!-- Botón para enviar los resultados, inicialmente oculto -->
+    <button id="enviarResultats" style="display: none;" onclick="enviarResultats()" class="button-navegacion">Enviar Resultats</button>
+
+    <!-- Formulario para agregar preguntas -->
+    <h3>Agregar Pregunta</h3>
+    <form id="crearPreguntaForm">
+        <input type="text" id="nuevaPregunta" placeholder="Nueva Pregunta" required />
+        <input type="text" id="nuevaImagen" placeholder="URL de la Imagen" />
+        <button type="submit">Crear Pregunta</button>
+    </form>
+
+    <button id="cargarPreguntas">Cargar Preguntas</button>
+    <div id="listaPreguntas"></div>
+
+    <script src="../web/js/functions.js"></script>
+</body>
+</html>

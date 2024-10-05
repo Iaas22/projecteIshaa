@@ -1,0 +1,312 @@
+{
+  "preguntes": [
+    {
+      "id": 1,
+      "pregunta": "Quina marca de cotxes utilitza el lema 'Ultimate Driving Machine'?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "BMW",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Mercedes-Benz",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Audi",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img1.jpeg"
+    },
+    {
+      "id": 2,
+      "pregunta": "Quina és la velocitat màxima permesa en una zona urbana?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "50 km/h",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "70 km/h",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "90 km/h",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img12.jpeg"
+    },
+    {
+      "id": 3,
+      "pregunta": "Què s'ha de fer quan un semàfor es posa en vermell?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "Aturar-se",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Passar amb compte",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Continuar si no hi ha trànsit",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img4.jpeg"
+    },
+    {
+      "id": 4,
+      "pregunta": "Quina és la funció dels frens de mà?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "Mantenir el cotxe estacionat",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Reduir la velocitat",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Augmentar la velocitat",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img3.jpeg"
+    },
+    {
+      "id": 5,
+      "pregunta": "Quina és la prioritat en una rotonda?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "Els vehicles dins de la rotonda",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Els vehicles que entren",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Els vehicles que surten",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img6.jpeg"
+    },
+    {
+      "id": 6,
+      "pregunta": "Què significa una línia contínua en la carretera?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "No es pot superar",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Es pot superar amb precaució",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "És opcional superar-la",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img8.jpeg"
+    },
+    {
+      "id": 7,
+      "pregunta": "Quina senyal indica la presència de treballs en la carretera?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "Senyal de treballs",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Senyal de perill",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Senyal d'accident",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img7.jpeg"
+    },
+    {
+      "id": 8,
+      "pregunta": "Quin tipus de llum s'ha de fer servir en condicions de boira?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "Llum antiboira",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Llum de carretera",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Llum d'alerta",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img16.jpeg"
+    },
+    {
+      "id": 9,
+      "pregunta": "Què indica una senyal amb una fletxa cap a l'esquerra?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "Gir a l'esquerra obligatori",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Girar a l'esquerra amb precaució",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Prohibició de girar a l'esquerra",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img19.jpeg"
+    },
+    {
+      "id": 10,
+      "pregunta": "Quina marca de motos utilitza el lema 'The Ultimate Riding Machine'?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "BMW Motorrad",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Harley-Davidson",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Kawasaki",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img9.jpeg"
+    },
+    {
+      "id": 11,
+      "pregunta": "Quina senyal indica un pas de vianants?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "Senyal de pas de vianants",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Senyal d'atenció",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Senyal de perill",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img10.jpeg"
+    },
+    {
+      "id": 12,
+      "pregunta": "Quin és el límit de velocitat en una autopista?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "120 km/h",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "100 km/h",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "90 km/h",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img15.jpeg"
+    },
+    {
+      "id": 13,
+      "pregunta": "Què s'ha de fer si un vehicle d'emergència s'aproxima amb llums i sirenes?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "Cedir el pas",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Aturar-se a la carretera",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Continuar com si res",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img13.jpeg"
+    },
+    {
+      "id": 14,
+      "pregunta": "Quina és la funció del retrovisor?",
+      "respostes": [
+        {
+          "id": 1,
+          "resposta": "Veure el trànsit darrere",
+          "correcta": true
+        },
+        {
+          "id": 2,
+          "resposta": "Augmentar la velocitat",
+          "correcta": false
+        },
+        {
+          "id": 3,
+          "resposta": "Reduir el soroll",
+          "correcta": false
+        }
+      ],
+      "imatge": "../web/img/img14.jpeg"
+    }
+  ]
+}
