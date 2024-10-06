@@ -37,7 +37,7 @@ function iniciarJuego(nombre, cantidadPreguntes) {
 
     // Fetch para obtener las preguntas desde el servidor
     fetch('../back/getPreguntas.php', {
-        method: 'POST',
+        method: 'POST', 
         headers: {
             'Content-Type': 'application/json',
         }
