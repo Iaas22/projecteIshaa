@@ -12,9 +12,9 @@
     
     <!-- Pantalla de inicio -->
     <div id="pantallaInicio">
-        <input type="text" id="nombre" placeholder="Introduce tu nombre" />
-        <input type="number" id="cantidadPreguntas" placeholder="Cantidad de preguntas" min="1" max="10" />
-        <button id="iniciarJuego" class="button-navegacion">Iniciar Juego</button>
+        <input type="text" id="nombre" placeholder="Introdueix el teu nom" />
+        <input type="number" id="cantidadPreguntas" placeholder="Quantitat de preguntes" min="1" max="10" />
+        <button id="iniciarJuego" class="button-navegacion small-button">Iniciar test</button>
     </div>
 
     <!-- Contenedor para mostrar el estado de la partida -->
@@ -31,18 +31,9 @@
     <br>
 
     <!-- Botón para enviar los resultados, inicialmente oculto -->
-    <button id="enviarResultats" style="display: none;" onclick="enviarResultats()" class="button-navegacion">Enviar Resultats</button>
-
-    <!-- Formulario para agregar preguntas -->
-    <h3>Agregar Pregunta</h3>
-    <form id="crearPreguntaForm">
-        <input type="text" id="nuevaPregunta" placeholder="Nueva Pregunta" required />
-        <input type="text" id="nuevaImagen" placeholder="URL de la Imagen" />
-        <button type="submit">Crear Pregunta</button>
-    </form>
-
-    <button id="cargarPreguntas">Cargar Preguntas</button>
-    <div id="listaPreguntas"></div>
+    <div id="enviarResultatsContainer" style="display: none;">
+        <button id="enviarResultats" onclick="enviarResultats()" class="button-navegacion small-button">Enviar Resultats</button>
+    </div>
 
     <script src="../web/js/functions.js"></script>
 </body>

@@ -1,107 +1,121 @@
 :root {
-  --color1: #ebf2fa;
-  --color2: #427aa1;
-  --color3: #064789;
-  --color-text: #333;
-  --color-button-hover: #064789;
-  --button-border-radius: 8px;
+  --color1: #ebf2fa; /* Color de fondo */
+  --color2: #427aa1; /* Color de fondo del encabezado y botones */
+  --color3: #064789; /* Color del texto del encabezado */
+  --color-text: #333; /* Color del texto principal */
+  --color-button-hover: #064789; /* Color del botón al pasar el mouse */
+  --button-border-radius: 8px; /* Radio de borde para botones */
 }
 
 * {
-  box-sizing: border-box;
+  box-sizing: border-box; /* Para un mejor manejo del tamaño de los elementos */
 }
 
 body {
-  background-color: var(--color1);
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  color: var(--color-text);
+  background-color: var(--color1); /* Fondo de la página */
+  text-align: center; /* Centrar el texto */
+  margin: 0; /* Sin márgenes */
+  padding: 0; /* Sin relleno */
+  font-family: 'Arial', sans-serif; /* Fuente del texto */
+  color: var(--color-text); /* Color del texto */
 }
 
 h1 {
-  background-color: var(--color2);
-  margin: 0;
-  padding: 20px;
-  font-size: 2em;
-  color: white;
+  background-color: var(--color2); /* Fondo del encabezado */
+  margin: 0; /* Sin márgenes */
+  padding: 20px; /* Relleno */
+  font-size: 2em; /* Tamaño de la fuente */
+  color: white; /* Color del texto */
 }
 
 #contenedor {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 20px;
-  padding: 20px;
+  display: flex; /* Flexbox para un mejor alineamiento */
+  flex-direction: column; /* Dirección de la columna */
+  align-items: center; /* Centrar los elementos */
+  margin-top: 20px; /* Margen superior */
+  padding: 20px; /* Relleno */
 }
 
 .question-container {
-  background-color: white;
-  width: 90%;
-  max-width: 600px;
-  margin-bottom: 20px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white; /* Fondo de la pregunta */
+  width: 90%; /* Ancho del contenedor */
+  max-width: 600px; /* Ancho máximo */
+  margin-bottom: 20px; /* Margen inferior */
+  padding: 20px; /* Relleno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 h3 {
-  margin-bottom: 10px;
-  font-size: 1.5em;
-  color: var(--color3);
+  margin-bottom: 10px; /* Margen inferior */
+  font-size: 1.5em; /* Tamaño de la fuente */
+  color: var(--color3); /* Color del texto */
 }
 
 .img-quizz {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 15px;
-  border-radius: 10px;
+  max-width: 100%; /* Máximo ancho de la imagen */
+  height: auto; /* Altura automática */
+  margin-bottom: 15px; /* Margen inferior */
+  border-radius: 10px; /* Bordes redondeados para la imagen */
 }
 
 button {
-  background-color: var(--color2);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  margin: 10px 0; /* Más separación entre los botones */
-  font-size: 1em;
-  cursor: pointer;
-  border-radius: var(--button-border-radius);
-  transition: background-color 0.3s, transform 0.2s;
-  width: 100%; /* Asegurarse de que el botón ocupe el ancho completo */
+  background-color: var(--color2); /* Fondo del botón */
+  border: none; /* Sin borde */
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Relleno */
+  margin: 10px 0; /* Margen */
+  font-size: 1em; /* Tamaño de la fuente */
+  cursor: pointer; /* Cambiar cursor al pasar */
+  border-radius: var(--button-border-radius); /* Radio de borde */
+  transition: background-color 0.3s, transform 0.2s; /* Transiciones */
+  width: 100%; /* Ancho completo */
 }
 
 button:hover {
-  background-color: var(--color-button-hover);
+  background-color: var(--color-button-hover); /* Color del botón al pasar */
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.98); /* Escalado al hacer clic */
+}
+
+/* Clase para botones pequeños */
+.small-button {
+  padding: 5px 10px; /* Relleno reducido */
+  font-size: 0.9em; /* Tamaño de fuente reducido */
+  width: auto; /* Ajusta el ancho automáticamente */
+}
+
+/* Contenedor para centrar el botón "Enviar Resultats" */
+#enviarResultatsContainer {
+    display: flex; /* Usar Flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    margin-top: 20px; /* Margen superior para separación */
 }
 
 /* Botones de navegación alineados horizontalmente */
 .navigation-buttons {
-  display: flex;
+  display: flex; /* Flexbox para el alineamiento */
   justify-content: center; /* Centrar los botones */
-  gap: 10px; /* Espacio entre los botones */
-  margin-top: 20px; /* Margen superior para separación */
+  gap: 10px; /* Espacio entre botones */
+  margin-top: 20px; /* Margen superior */
 }
 
 .navigation-buttons button {
-  width: auto; /* Dejar que el ancho sea automático */
+  width: auto; /* Ancho automático */
   max-width: 150px; /* Ancho máximo para los botones */
-  padding: 10px 15px; /* Relleno para que se vea bien */
+  padding: 10px 15px; /* Relleno para botones */
 }
 
 /* Mejoras para pantallas más grandes */
 @media (min-width: 768px) {
   button {
-      padding: 15px 25px;
-      font-size: 1.1em;
+    padding: 15px 25px; /* Relleno ajustado */
+    font-size: 1.1em; /* Tamaño de fuente ajustado */
   }
 
   .navigation-buttons button {
-      padding: 12px 20px; /* Padding ajustado para pantallas más grandes */
+    padding: 12px 20px; /* Relleno ajustado para botones de navegación */
   }
 }

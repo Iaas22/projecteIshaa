@@ -100,7 +100,7 @@ function mostrarPregunta() {
     <br>
     <div class="navigation-buttons">
       ${preguntaActual > 0 ? `<button onclick="anteriorPregunta()">Anterior</button>` : ''}
-      ${preguntaActual < preg.length - 1 ? `<button onclick="siguientePregunta()">Siguiente</button>` : ''}
+      ${preguntaActual < preg.length - 1 ? `<button onclick="siguientePregunta()">Seguent</button>` : ''}
     </div>
     `;
 
@@ -145,7 +145,7 @@ function verificarResposta(indexP, indexR) {
         // Si se han respondido todas las preguntas, mostramos el botón para enviar los resultados
         if (estatDeLaPartida.contadorPreguntes === preg.length) {
             clearInterval(temporizador);
-            document.getElementById('enviarResultats').style.display = 'block';
+            document.getElementById('enviarResultatsContainer').style.display = 'block'; // Mostrar contenedor del botón
         }
     }
 }
@@ -182,9 +182,9 @@ function enviarResultats() {
         throw new Error('Error en la respuesta de la red.');
     })
     .then(data => {
-        let resultHtml = `<h2>Resultados del Test</h2>`;
-        resultHtml += `<p>Has acertado ${puntuacio} de ${preg.length} preguntas.</p>`;
-        resultHtml += `<button id="reiniciarJuego" class="button-navegacion" onclick="reiniciarJuego()">Jugar Nuevamente</button>`;
+        let resultHtml = `<h2>Resultats del test: </h2>`;
+        resultHtml += `<p>Has encertat ${puntuacio} de ${preg.length} preguntes.</p>`;
+        resultHtml += `<button id="reiniciarJuego" class="button-navegacion" onclick="reiniciarJuego()">Repetir test </button>`;
 
         // Limpiar todo el contenido y mostrar solo el resultado
         document.getElementById('contenedor').innerHTML = resultHtml;
@@ -192,133 +192,16 @@ function enviarResultats() {
         // Ocultar otros elementos
         document.getElementById('estatPartida').style.display = 'none';
         document.getElementById('temporizadorContainer').style.display = 'none';
-        document.getElementById('enviarResultats').style.display = 'none';
+        document.getElementById('enviarResultatsContainer').style.display = 'none';
     })
-    .catch(error => console.error('Error en fetch:', error));
+    .catch(error => console.error('Error al enviar los resultados:', error));
 }
 
-// Nueva función para reiniciar el juego
+// Función para reiniciar el juego
 function reiniciarJuego() {
-    // Reiniciar todas las variables
-    preg = [];
     puntuacio = 0;
     preguntaActual = 0;
-    clearInterval(temporizador);
-    document.getElementById('temporizador').textContent = ''; // Limpiar el temporizador
-
-    // Reiniciar la interfaz de usuario
-    document.getElementById('pantallaInicio').style.display = 'block';
-    document.getElementById('estatPartida').style.display = 'none';
-    document.getElementById('contenedor').innerHTML = ''; // Limpiar el contenedor de preguntas
-    document.getElementById('enviarResultats').style.display = 'none'; // Ocultar botón de enviar resultados
-    document.getElementById('temporizadorContainer').style.display = 'none'; // Ocultar temporizador
-
-    // Limpiar el nombre y cantidad de preguntas
-    document.getElementById('nombre').value = '';
-    document.getElementById('cantidadPreguntas').value = '';
+    estatDeLaPartida.contadorPreguntes = 0;
+    document.getElementById('pantallaInicio').style.display = 'block'; // Volver a mostrar la pantalla de inicio
+    document.getElementById('contenedor').innerHTML = ''; // Limpiar el contenedor
 }
-
-// Función para crear una nueva pregunta
-document.getElementById('crearPreguntaForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const pregunta = document.getElementById('nuevaPregunta').value;
-    const imatge = document.getElementById('nuevaImagen').value;
-
-    fetch('../back/createPregunta.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-            pregunta: pregunta,
-            imatge: imatge
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Pregunta creada con éxito.');
-            document.getElementById('nuevaPregunta').value = '';
-            document.getElementById('nuevaImagen').value = '';
-            cargarPreguntas(); // Recarga las preguntas
-        }
-    });
-});
-
-// Función para cargar las preguntas
-function cargarPreguntas() {
-    fetch('../back/readPreguntas.php')
-        .then(response => response.json())
-        .then(data => {
-            const lista = document.getElementById('listaPreguntas');
-            lista.innerHTML = ''; // Limpiar lista previa
-            data.forEach(pregunta => {
-                lista.innerHTML += `<div>
-                    <strong>${pregunta.pregunta}</strong> <br>
-                    <img src="${pregunta.imatge}" alt="Imagen" style="width:100px;"><br>
-                    <button onclick="eliminarPregunta(${pregunta.id})">Eliminar</button>
-                    <button onclick="mostrarFormularioActualizar(${pregunta.id}, '${pregunta.pregunta}', '${pregunta.imatge}')">Editar pregunta</button>
-                </div>`;
-            });
-        })
-}
-
-// Función para eliminar pregunta
-function eliminarPregunta(id) {
-    fetch('../back/deletePregunta.php', {
-        method: 'DELETE',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-            id: id
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Pregunta eliminada con éxito.');
-            cargarPreguntas(); // Recarga las preguntas
-        }
-    });
-}
-
-// Mostrar el formulario para actualizar la pregunta
-function mostrarFormularioActualizar(id, pregunta, imatge) {
-    document.getElementById('nuevaPregunta').value = pregunta;
-    document.getElementById('nuevaImagen').value = imatge;
-    document.getElementById('crearPreguntaForm').onsubmit = function(e) {
-        e.preventDefault();
-        actualizarPregunta(id);
-    };
-}
-
-// Función para actualizar pregunta
-function actualizarPregunta(id) {
-    const pregunta = document.getElementById('nuevaPregunta').value;
-    const imatge = document.getElementById('nuevaImagen').value;
-
-    fetch('updatePregunta.php', {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-            id: id,
-            pregunta: pregunta,
-            imatge: imatge
-        })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            alert('Pregunta actualizada con éxito.');
-            cargarPreguntas(); // Recarga las preguntas
-            document.getElementById('nuevaPregunta').value = '';
-            document.getElementById('nuevaImagen').value = '';
-        }
-    });
-}
-
-// Cargar preguntas al inicio
-document.addEventListener('DOMContentLoaded', cargarPreguntas);
